@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352474855554",
+    "project_id": "cryptoappwatch",
+    "storage_bucket": "cryptoappwatch.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352474855554:android:2bf15da032946701b5dc9b",
+        "android_client_info": {
+          "package_name": "com.cryptoappwatch.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARwKFvcphBVWx9Vwa5byycHNsgqtGa_OA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
