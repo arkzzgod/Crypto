@@ -1,9 +1,11 @@
 
-import 'package:crypto_value/repositories/crypto_coins/models/crypto_coin.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-class CryptoListTile extends StatelessWidget {
-  const CryptoListTile({
+import '../../../repositories/crypto_coins/models/crypto_coin.dart';
+
+class CryotoCoinTile extends StatelessWidget {
+  const CryotoCoinTile({
     Key? key,
     required this.coin,
   }) : super(key: key);
@@ -13,22 +15,24 @@ class CryptoListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final coinDetails = coin.details;
     return ListTile(
-      leading: Image.network(coin.imageURL),
+      leading: Image.network(coinDetails.fullImageUrl),
       title: Text(
         coin.name,
         style: theme.textTheme.bodyMedium,
       ),
       subtitle: Text(
-        '${coin.priceInUSD}\$',
+        '${coinDetails.priceInUSD} \$',
         style: theme.textTheme.labelSmall,
       ),
       trailing: const Icon(Icons.arrow_forward_ios),
       onTap: () {
-        Navigator.of(context).pushNamed(
-          '/coin',
-          arguments: coin,
-        );
+        AutoRouter.of(context).push(CryptoCoinRoute(coin: coin));
+        // Navigator.of(context).pushNamed(
+        //   '/coin',
+        //   arguments: coin,
+        // );
       },
     );
   }
